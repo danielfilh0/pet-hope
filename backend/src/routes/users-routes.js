@@ -12,7 +12,7 @@ const createUserController = new CreateUserController()
 const getUserController = new GetUserController()
 
 usersRouter.post('/auth', use(loginController.handle))
-usersRouter.post('/users', use(createUserController.handle))
+usersRouter.post('/users', use(ensureAuth), use(createUserController.handle))
 usersRouter.get('/users/me', use(ensureAuth), use(getUserController.handle))
 
 module.exports = usersRouter

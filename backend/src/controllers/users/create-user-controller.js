@@ -1,4 +1,4 @@
-const makeCreateUserUseCase = require('../../factories/make-create-user-use-case')
+const makeCreateUserUseCase = require('../../factories/users/make-create-user-use-case')
 const isString = require('../../utils/is-string')
 const isEmailValid = require('../../utils/is-valid-email')
 

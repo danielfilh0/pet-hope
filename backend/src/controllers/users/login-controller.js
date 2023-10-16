@@ -1,4 +1,4 @@
-const makeLoginUseCase = require('../../factories/make-login-use-case')
+const makeLoginUseCase = require('../../factories/users/make-login-use-case')
 const isString = require('../../utils/is-string')
 const isEmailValid = require('../../utils/is-valid-email')
 
@@ -7,20 +7,21 @@ class LoginController {
     const { email, password } = req.body
 
     if (!email || !password) {
-      return res.status(400).json({ errorMessage: 'Nome, email e senha são obrigatórios.' })
+      return res.status(400).json({ errorMessage: 'Email e senha são obrigatórios.' })
+    }
+
+    if (!isEmailValid(email)) {
+      return res.status(400).json({ errorMessage: 'O email precisa ser válido.' })
     }
 
     if (!isString(password)) {
-      return res.status(400).json({ errorMessage: 'Nome, email e senha precisam ser do tipo texto.' })
+      return res.status(400).json({ errorMessage: 'Senha precisa ser do tipo texto.' })
     }
 
     if (password.length < 8) {
       return res.status(400).json({ errorMessage: 'A senha precisa ser maior ou igual a 8 caracteres.' })
     }
 
-    if (!isEmailValid(email)) {
-      return res.status(400).json({ errorMessage: 'O email precisa ser válido.' })
-    }
 
     const loginUseCase = makeLoginUseCase()
 

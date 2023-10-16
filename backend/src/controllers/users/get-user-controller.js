@@ -1,4 +1,4 @@
-const makeGetUserUseCase = require('../../factories/make-get-user-use-case')
+const makeGetUserUseCase = require('../../factories/users/make-get-user-use-case')
 
 class GetUserController {
   async handle(req, res) {
