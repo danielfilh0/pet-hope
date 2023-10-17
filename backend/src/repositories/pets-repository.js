@@ -40,10 +40,10 @@ class UsersRepository {
   async update(id, { name, type, age, photo_url, was_adopted }) {
     const [row] = await query(`
     UPDATE pets
-    SET name = $1
-      type = $2
-      age = $3
-      photo_url = $4
+    SET name = $1,
+      type = $2,
+      age = $3,
+      photo_url = $4,
       was_adopted = $5
     WHERE id = $6
     RETURNING *
