@@ -32,6 +32,11 @@ query(`
   ALTER TABLE adoption_requests ALTER COLUMN pet_id SET NOT NULL, ALTER COLUMN contact_name SET NOT NULL, ALTER COLUMN contact_phone SET NOT NULL, ALTER COLUMN contact_address SET NOT NULL, ALTER COLUMN status SET NOT NULL;
 
   ALTER TABLE pets ADD COLUMN description TEXT;
+
+  ALTER TABLE adoption_requests ADD COLUMN created_at TIMESTAMP;
+  ALTER TABLE adoption_requests ALTER COLUMN created_at SET DEFAULT now();
+  ALTER TABLE adoption_requests ALTER COLUMN created_at SET NOT NULL;
+
 `).then(() => {
   console.log('Database created successfully!')
 }).catch(() => {
