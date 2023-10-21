@@ -1,4 +1,4 @@
-const makeListPetsUseCase = require('../../factories/pets/make-remove-pet-use-case')
+const makeRemovePetUseCase = require('../../factories/pets/make-remove-pet-use-case')
 
 class RemovePetController {
   async handle(req, res) {
@@ -6,7 +6,7 @@ class RemovePetController {
 
     if (!id) return res.status(400).json({ errorMessage: 'Forneça o ID do pet.' })
 
-    const removePetUseCase = makeListPetsUseCase()
+    const removePetUseCase = makeRemovePetUseCase()
 
     await removePetUseCase.execute(id)
 

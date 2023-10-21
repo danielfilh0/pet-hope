@@ -8,7 +8,7 @@ class UpdatePetController {
     const { id } = req.params
     const { name, type, age, description, was_adopted, photo_url } = req.body
 
-    if (!id) return res.status(400).json({ errorMessage: 'Forneça o ID do pet.' })
+    if (!id) return res.status(400).json({ errorMessage: 'ID do pet não informado.' })
 
     if (!isString(name) || !isString(type) || !isString(age)) {
       return res.status(400).json({ errorMessage: 'Nome, tipo e idade precisam ser do tipo texto.' })

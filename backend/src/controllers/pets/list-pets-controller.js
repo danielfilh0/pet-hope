@@ -6,7 +6,7 @@ class ListPetsController {
 
     const pets = await listPetsUseCase.execute()
 
-    return res.status(201).json(pets)
+    return res.json(pets)
   }
 }
 

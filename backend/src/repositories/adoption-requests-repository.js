@@ -2,7 +2,17 @@ const { query } = require('../database')
 
 class AdoptionRequestsRepository {
   async findAll() {
-    const rows = await query('SELECT * FROM adoption_requests ORDER BY created_at')
+    const sql = `
+      SELECT adoption_requests.*,
+        pets.name AS pet_name,
+        pets.type AS pet_type,
+        pets.age AS pet_age,
+        pets.photo_url AS pet_photo_url
+      FROM adoption_requests
+      INNER JOIN pets ON adoption_requests.pet_id = pets.id;
+    `
+    
+    const rows = await query(sql)
 
     return rows
   }
@@ -18,11 +28,18 @@ class AdoptionRequestsRepository {
   }
 
   async findByPetId(petId) {
-    const [row] = await query(`
-      SELECT id, name, password
+    const sql = `
+      SELECT adoption_requests.*,
+        pets.name AS pet_name,
+        pets.type AS pet_type,
+        pets.age AS pet_age,
+        pets.photo_url AS pet_photo_url
       FROM adoption_requests
+      INNER JOIN pets ON adoption_requests.pet_id = pets.id
       WHERE pet_id = $1
-    `, [petId])
+    `
+
+    const [row] = await query(sql, [petId])
 
     return row
   }
@@ -57,12 +74,12 @@ class AdoptionRequestsRepository {
     status
   }) {
     const [row] = await query(`
-    UPDATE pets
-    SET name = $1,
-      type = $2,
-      age = $3,
-      photo_url = $4,
-      was_adopted = $5
+    UPDATE adoption_requests
+    SET pet_id = $1,
+      contact_name = $2,
+      contact_phone = $3,
+      contact_address = $4,
+      status = $5
     WHERE id = $6
     RETURNING *
   `, [petId, contactName, contactPhone, contactAddress, status, id])
@@ -70,8 +87,14 @@ class AdoptionRequestsRepository {
     return row
   }
 
-  async delete(id) {
-    const deleteOp = await query('DELETE FROM adoption_requests WHERE id = $1', [id])
+  async delete({ id, status }) {
+    let sql
+
+    if (id) sql = ['DELETE FROM adoption_requests WHERE id = $1', [id]]
+    else if (status) sql = ['DELETE FROM adoption_requests WHERE status = $1', [status]]
+    else return
+
+    const deleteOp = await query(sql[0], sql[1])
 
     return deleteOp
   }
