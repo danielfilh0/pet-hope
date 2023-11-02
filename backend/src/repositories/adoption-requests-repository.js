@@ -90,8 +90,8 @@ class AdoptionRequestsRepository {
   async delete({ id, status }) {
     let sql
 
-    if (id) sql = ['DELETE FROM adoption_requests WHERE id = $1', [id]]
-    else if (status) sql = ['DELETE FROM adoption_requests WHERE status = $1', [status]]
+    if (status) sql = ['DELETE FROM adoption_requests WHERE status = $1', [status]]
+    else if (id) sql = ['DELETE FROM adoption_requests WHERE id = $1', [id]]
     else return
 
     const deleteOp = await query(sql[0], sql[1])
