@@ -17,12 +17,9 @@ const removePetController = new RemovePetController()
 const uploadPetPhotoController = new UploadPetPhotoController()
 
 petsRouter.get('/pets', use(listPetsController.handle))
-
-petsRouter.use(use(ensureAuth))
-
-petsRouter.post('/pets', use(createPetController.handle))
-petsRouter.post('/pets/upload-photo', upload.single('file'), use(uploadPetPhotoController.handle))
-petsRouter.put('/pets/:id', use(updatePetController.handle))
-petsRouter.delete('/pets/:id', use(removePetController.handle))
+petsRouter.post('/pets', use(ensureAuth), use(createPetController.handle))
+petsRouter.post('/pets/upload-photo', use(ensureAuth), upload.single('file'), use(uploadPetPhotoController.handle))
+petsRouter.put('/pets/:id', use(ensureAuth), use(updatePetController.handle))
+petsRouter.delete('/pets/:id', use(ensureAuth), use(removePetController.handle))
 
 module.exports = petsRouter

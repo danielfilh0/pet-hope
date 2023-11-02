@@ -16,10 +16,8 @@ const removeAdoptionRequestsController = new RemoveAdoptionRequestsController()
 
 adoptionRequestsRouter.post('/adoption-requests', use(createAdoptionRequestController.handle))
 
-adoptionRequestsRouter.use(use(ensureAuth))
-
-adoptionRequestsRouter.get('/adoption-requests', use(listAdoptionRequestsController.handle))
-adoptionRequestsRouter.patch('/adoption-requests/:id', use(updateAdoptionRequestController.handle))
-adoptionRequestsRouter.delete('/adoption-requests', use(removeAdoptionRequestsController.handle))
+adoptionRequestsRouter.get('/adoption-requests', use(ensureAuth), use(listAdoptionRequestsController.handle))
+adoptionRequestsRouter.patch('/adoption-requests/:id', use(ensureAuth), use(updateAdoptionRequestController.handle))
+adoptionRequestsRouter.delete('/adoption-requests', use(ensureAuth), use(removeAdoptionRequestsController.handle))
 
 module.exports = adoptionRequestsRouter
