@@ -6,12 +6,12 @@ class RemoveAdoptionRequestUseCase {
   }
 
   async execute({ id, status }) {
-    const allStatus = ['PENDING', 'ACCEPTED']
+    const allStatus = ['PENDING', 'REJECTED', 'ACCEPTED']
 
     const doesStatusMatchesAllStatus = allStatus.includes(status?.toUpperCase())
 
     if (status && !doesStatusMatchesAllStatus) {
-      throw new CustomError(400, 'O status do pedido precisa ser PENDING ou ACCEPTED.')
+      throw new CustomError(400, 'O status do pedido precisa ser PENDING, REJECTED ou ACCEPTED.')
     }
 
     await this.adoptionRequestsRepository.delete({ id, status: status?.toUpperCase() })

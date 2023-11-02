@@ -15,12 +15,12 @@ class UpdateAdoptionRequestUseCase {
     
     if (!doesAdoptionRequestExists) throw new CustomError(404, 'Pedido de adoção não encontrado.')
 
-    const allStatus = ['PENDING', 'ACCEPTED']
+    const allStatus = ['PENDING', 'REJECTED', 'ACCEPTED']
 
     const doesStatusMatchesAllStatus = allStatus.includes(status.toUpperCase())
 
     if (!doesStatusMatchesAllStatus) {
-      throw new CustomError(400, 'O status do pedido precisa ser PENDING ou ACCEPTED.')
+      throw new CustomError(400, 'O status do pedido precisa ser PENDING, REJECTED, ou ACCEPTED.')
     } 
 
     const adoptionRequest = this.adoptionRequestsRepository.update(id, {
