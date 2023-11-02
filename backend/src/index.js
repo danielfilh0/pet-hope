@@ -14,7 +14,9 @@ app.use(function(err, req, res, next) {
   const statusCode = err.statusCode || 500
   const message = err.message || 'Erro desconhecido.'
 
-  console.log(err)
+  if (process.env.ENVIRONMENT === 'dev') {
+    console.log(err)
+  }
 
   return res.status(statusCode).send({ errorMessage: message })
 })
