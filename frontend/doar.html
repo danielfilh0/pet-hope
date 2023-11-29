@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Hope - Adoção</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/PET-CADASTRO.jpg" type="image/x-icon">
+    
+    <script src="/js/doar.js" defer></script>
+</head>
+<body>
+    <section class="doar" id="doar">
+        <div class="navbar">
+            <h1>PetHope</h1>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Adotar</a></li>
+                <li><a id="logout" href="/index.html">Sair</a></li>
+            </ul>
+            <h1>Doar</h1>
+        </div>
+        <form id="formDoar" method="post" action="">
+            <h1>Doe um animalzinho</h1>
+            <p>Nome</p>
+            <input type="text" name="nome" id="nomeInput" placeholder="Nome..">
+            <p>Idade</p>
+            <p class="descricao-idade">Apenas NEWBORD, JUNIOR, TEEN, ADULT e OLD</p>
+            <input type="text" name="idade" id="idadeInput" placeholder="Idade..">
+            <p>Dog/Cat</p>
+            <input type="text" name="raca" id="racaInput" placeholder="Tipo..">
+            <p>Descrição</p>
+            <input type="text" name="descricao" id="descricaoInput" placeholder="Descrição..">
+            <p>Foto</p>
+            <input type="file" name="foto" id="fotoInput" placeholder="Foto..">
+            <button type="submit">Entrar</button>
+        </form>
+    </section>
+</body>
+</html>

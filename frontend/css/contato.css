@@ -1,0 +1,55 @@
+.contato
+{
+    background-color: var(--preto-fosco);
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    gap: 2em;
+}
+
+.contato h2
+{
+    font-size: 3em;
+}
+
+.contato .caixas
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    flex-direction: column;
+}
+
+.contato ul
+{
+    display: flex;
+    gap: .5em;
+    list-style: none;   
+    font-size: 1em; 
+}
+
+.contato ul h2
+{
+    font-size: 2em;
+}
+
+.contato a
+{
+    text-decoration: none;
+    color: var(--branco);
+    transition: .15s;
+}
+
+.contato ul:hover :not(:hover)
+{
+    opacity: .5;
+}
+
+#logout-contato
+{
+    color: var(--vermelho);
+}

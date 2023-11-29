@@ -1,0 +1,70 @@
+body
+{
+    background-color: var(--branco);
+}
+
+.doar
+{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/img/DOAR-GATO.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.doar form
+{
+    color: var(--branco);
+    width: 30%;
+    background-color: var(--preto-sign);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 1em;
+    gap: .5em;
+    margin: 3em auto 0 auto;
+}
+
+.doar form h1
+{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.doar form input
+{
+    padding: .5em 1em;
+    border-radius: 3px;
+    width: 80%;
+}
+
+.doar form button 
+{
+    font-size: .75em;
+    color: var(--branco);
+    font-weight: 700;
+    background-color: var(--verde-claro);
+    padding: .35em 1em;
+    border-radius: 3px;
+    width: 50%;
+    transition: .35s;
+    margin-top: 1.15em;
+    cursor: pointer;
+    transition: .35s;
+}
+
+.doar form button:hover
+{
+    opacity: .5;
+}
+
+.descricao-idade {
+    font-size: .8em;
+}

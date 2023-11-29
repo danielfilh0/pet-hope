@@ -1,0 +1,50 @@
+.navbar
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5em 0;
+    color: var(--branco);
+    font-weight: 700;
+}
+
+.navbar ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    list-style: none;
+}
+
+.navbar li
+{
+    transition: all .35s;
+}
+
+.navbar a
+{
+    color: var(--branco);
+    text-decoration: none;
+}
+
+#admin
+{
+    color: var(--branco);
+    background-color: var(--laranja);
+    padding: .25em .75em;
+    border-radius: 5px;
+}
+
+#logout
+{
+    color: var(--branco);
+    background-color: var(--vermelho-sangue);
+    padding: .25em .75em;
+    border-radius: 5px;
+}
+
+.navbar ul:hover > :not(:hover)
+{
+    opacity: .3;
+}

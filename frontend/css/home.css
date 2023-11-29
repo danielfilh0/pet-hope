@@ -1,0 +1,99 @@
+body
+{
+    background-color: var(--branco);
+}
+
+.home
+{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/img/PET-HOME-2.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home .titulo
+{
+    color: var(--branco);
+    text-align: center;
+    font-size: 4em;
+    margin-top: 3.5em;
+}
+
+.adotar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em 0;
+    background-color: var(--laranja);
+    color: var(--branco);
+}
+
+.adotar h1
+{
+    font-size: 3em;
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.animais
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Mínimo de 200px, no máximo 1 fracao do espaço disponível */
+    gap: 16px;
+    width: 70%;
+    transition: .35s;
+    margin-bottom: 4.5em;
+}
+
+.animal
+{
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 .15em 1em var(--preto);
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 5%;
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--preto);
+    backdrop-filter: blur(5px);
+}
+
+.animal h2
+{
+    margin-bottom: .5em;
+}
+
+.animal img
+{
+    width: 80%;
+    border-radius: 5px;
+    margin: 1em 0;
+    margin: 1em auto 1em auto;
+}
+
+.animal button
+{
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: .5em 1em;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .35s;
+    margin-top: 1.5em;
+    text-decoration: none;
+}
+
+.animal button:hover
+{
+    opacity: .7;
+}

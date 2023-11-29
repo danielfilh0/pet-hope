@@ -1,0 +1,102 @@
+body
+{
+    background-color: var(--branco);
+}
+
+#adocao
+{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/img/DOAR-GATO.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#adocao form
+{
+    color: var(--branco);
+    width: 30%;
+    background-color: var(--preto-sign);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 1em;
+    gap: .5em;
+    margin: 3em auto 0 auto;
+}
+
+#adocao form h1
+{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+#adocao form input
+{
+    padding: .5em 1em;
+    border-radius: 3px;
+    width: 80%;
+}
+
+#adocao form button 
+{
+    font-size: .75em;
+    color: var(--branco);
+    font-weight: 700;
+    background-color: var(--verde-claro);
+    padding: .35em 1em;
+    border-radius: 3px;
+    width: 50%;
+    transition: .35s;
+    margin-top: 1.15em;
+    cursor: pointer;
+    transition: .35s;
+}
+
+#adocao form button:hover
+{
+    opacity: .5;
+}
+
+#adocao form a 
+{
+    font-size: .75em;
+    text-decoration: none;
+    text-align: center;
+    color: var(--branco);
+    font-weight: 700;
+    background-color: var(--vermelho-sangue);
+    padding: .35em 1em;
+    border-radius: 3px;
+    width: 50%;
+    transition: .35s;
+    margin-top: 1.15em;
+    cursor: pointer;
+    transition: .35s;
+}
+
+#adocao form p
+{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#adocao form a:hover
+{
+    opacity: .5;
+}
+
+#adocao form div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}

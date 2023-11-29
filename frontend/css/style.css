@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@500&display=swap');
+@import url(/css/signin-signout.css);
+@import url(/css/home.css);
+@import url(/css/navbar.css);
+@import url(/css/contato.css);
+@import url(/css/doar.css);
+@import url(/css/adotar.css);
+
+*
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+:root
+{
+    --preto: rgb(0,0,0,.8);
+    --branco: #fff;
+    --vermelho: #f00;
+    --vermelho-sangue: rgb(111, 3, 3);
+    --verde: #0f0;
+    --azul: rgb(25, 25, 184);
+    --verde-claro: #7cbb5f;
+    --verde-escuro: #4F6F52;
+    --preto-sign: rgba(0, 0, 0, 0.6);
+    --laranja: rgb(247, 122, 55);
+    --preto-fosco: #1d1e20;
+}
+
+body
+{
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.copyright
+{
+    font-weight: 700;
+    font-size: .65em;
+    position: absolute;
+    margin: 0 auto 0 auto;
+    bottom: 10px;
+    font-family: 'Lato', sans-serif;
+}
